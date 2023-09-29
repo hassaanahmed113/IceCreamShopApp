@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomWidget {
-  Widget Textt(text, size) {
+  Widget Textt(text, double size) {
     return Text(
       text,
       style: TextStyle(fontSize: size),
@@ -37,10 +37,10 @@ class CustomWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    width: 120,
+                    height: 100,
                     child: Image.asset(
                       cimage[index],
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                     ),
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
@@ -70,16 +70,20 @@ class CustomWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: ElevatedButton(
-                        style: TextButton.styleFrom(
-                            backgroundColor: Color(0xffB40300)),
-                        onPressed: () {
-                          function(index);
-                        },
-                        child: Text(
-                          "Add to cart",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
+                    child: Container(
+                      height: 20,
+                      child: ElevatedButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: Color(0xffB40300)),
+                          onPressed: () {
+                            function(index);
+                          },
+                          child: Text(
+                            "Add to cart",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 13),
+                          )),
+                    ),
                   )
                 ],
               ),

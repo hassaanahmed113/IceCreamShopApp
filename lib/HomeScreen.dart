@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:IceCreamShopApp/LoginScreen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   List<dynamic> dprice = ['12.00', '12.00', '12.00', '12.00', '12.00'];
 
-  var name1;
+  var name1 = "";
   int _currentIndex = 0;
 
   @override
@@ -206,11 +207,22 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 width: 10,
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(CupertinoIcons.bell),
-                color: Colors.black,
-              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => IceCreamShopApp()));
+                },
+                child: Container(
+                  height: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16, horizontal: 10),
+                    child: Image.asset("assets/log-out.png"),
+                  ),
+                ),
+              )
             ]),
         body: Container(
           child: Column(
